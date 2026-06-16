@@ -190,25 +190,25 @@ export default function NewEntityTypePage() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Category *
                 </label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {Object.entries(categoryIcons).map(([key, icon]) => (
-                    <button
-                      key={key}
-                      type="button"
-                      onClick={() => handleCategoryChange(key)}
-                      className={`p-4 border-2 rounded-lg text-center transition-all ${
-                        formData.category === key
-                          ? 'border-green-500 bg-green-50'
-                          : 'border-gray-300 hover:border-green-300'
-                      }`}
-                    >
-                      <div className="text-3xl mb-2">{icon}</div>
-                      <div className="text-sm font-medium text-gray-900 capitalize">
-                        {key}
-                      </div>
-                    </button>
-                  ))}
-                </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {Object.entries(categoryIcons as Record<string, React.ReactNode>).map(([key, icon]) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => handleCategoryChange(key)}
+                    className={`p-4 border-2 rounded-lg text-center transition-all ${
+                      formData.category === key
+                        ? 'border-green-500 bg-green-50'
+                        : 'border-gray-300 hover:border-green-300'
+                    }`}
+                  >
+                    <div className="text-3xl mb-2">{icon}</div>
+                    <div className="text-sm font-medium text-gray-900 capitalize">
+                      {key}
+                    </div>
+                  </button>
+                ))}
+              </div>
               </div>
 
               <div className="flex items-center space-x-8">

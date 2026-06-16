@@ -199,7 +199,7 @@ export default function TrendsPage() {
       return <div className="text-center py-12 text-gray-500">No production data available</div>;
     }
 
-    const productTypes = [...new Set(productionData.map(d => d.product_type))];
+    const productTypes = Array.from(new Set(productionData.map(d => d.product_type)));
     
     return (
       <div className="space-y-6">
@@ -243,7 +243,7 @@ export default function TrendsPage() {
       return <div className="text-center py-12 text-gray-500">No sales data available</div>;
     }
 
-    const productTypes = [...new Set(salesData.map(d => d.product_type).filter(Boolean))];
+    const productTypes = Array.from(new Set(salesData.map(d => d.product_type).filter(Boolean)));
 
     return (
       <div className="space-y-6">
@@ -314,7 +314,7 @@ export default function TrendsPage() {
       return <div className="text-center py-12 text-gray-500">No expense data available</div>;
     }
 
-    const categories = [...new Set(expensesData.map(d => d.category))];
+    const categories = Array.from(new Set(expensesData.map(d => d.category)));
 
     return (
       <div className="space-y-6">
