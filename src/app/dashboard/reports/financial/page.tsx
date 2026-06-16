@@ -223,7 +223,7 @@ export default function FinancialReportsPage() {
                           NET {netProfit >= 0 ? 'PROFIT' : 'LOSS'}
                         </span>
                         <span className={`text-2xl font-bold ${netProfit >= 0 ? 'text-green-700' : 'text-red-700'}`}>
-                          ${Math.abs(netProfit).toFixed(2)}
+                          KES {Math.abs(netProfit).toFixed(2)}
                         </span>
                       </div>
                       <p className="text-sm text-gray-600 mt-1">Profit Margin: {profitMargin}%</p>
