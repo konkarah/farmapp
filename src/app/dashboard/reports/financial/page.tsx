@@ -159,11 +159,11 @@ export default function FinancialReportsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-white rounded-lg shadow p-6 border-l-4 border-green-500">
                     <p className="text-sm text-gray-600 mb-1">Total Revenue</p>
-                    <p className="text-3xl font-bold text-green-600">${totalRevenue.toFixed(2)}</p>
+                    <p className="text-3xl font-bold text-green-600">KES{totalRevenue.toFixed(2)}</p>
                   </div>
                   <div className="bg-white rounded-lg shadow p-6 border-l-4 border-red-500">
                     <p className="text-sm text-gray-600 mb-1">Total Expenses</p>
-                    <p className="text-3xl font-bold text-red-600">${totalExpenses.toFixed(2)}</p>
+                    <p className="text-3xl font-bold text-red-600">KES{totalExpenses.toFixed(2)}</p>
                   </div>
                   <div className={`bg-white rounded-lg shadow p-6 border-l-4 ${netProfit >= 0 ? 'border-blue-500' : 'border-orange-500'}`}>
                     <p className="text-sm text-gray-600 mb-1">Net {netProfit >= 0 ? 'Profit' : 'Loss'}</p>
@@ -187,11 +187,11 @@ export default function FinancialReportsPage() {
                       <div className="space-y-2">
                         <div className="flex justify-between py-2 border-b border-gray-100">
                           <span className="text-gray-700">Sales Income</span>
-                          <span className="font-medium text-green-700">${totalRevenue.toFixed(2)}</span>
+                          <span className="font-medium text-green-700">KES{totalRevenue.toFixed(2)}</span>
                         </div>
                         <div className="flex justify-between py-2 font-bold">
                           <span>Total Revenue</span>
-                          <span className="text-green-700">${totalRevenue.toFixed(2)}</span>
+                          <span className="text-green-700">KES{totalRevenue.toFixed(2)}</span>
                         </div>
                       </div>
                     </div>
@@ -203,7 +203,7 @@ export default function FinancialReportsPage() {
                         {Object.entries(expensesByCategory).map(([cat, amt]: any) => (
                           <div key={cat} className="flex justify-between py-2 border-b border-gray-100">
                             <span className="text-gray-700">{cat}</span>
-                            <span className="font-medium text-red-700">${amt.toFixed(2)}</span>
+                            <span className="font-medium text-red-700">KES{amt.toFixed(2)}</span>
                           </div>
                         ))}
                         {Object.keys(expensesByCategory).length === 0 && (
@@ -211,7 +211,7 @@ export default function FinancialReportsPage() {
                         )}
                         <div className="flex justify-between py-2 font-bold">
                           <span>Total Expenses</span>
-                          <span className="text-red-700">${totalExpenses.toFixed(2)}</span>
+                          <span className="text-red-700">KES{totalExpenses.toFixed(2)}</span>
                         </div>
                       </div>
                     </div>
@@ -252,18 +252,18 @@ export default function FinancialReportsPage() {
                     <tbody className="divide-y divide-gray-100">
                       <tr className="py-2">
                         <td className="py-2 text-sm text-gray-700">Cash / Bank</td>
-                        <td className="py-2 text-sm text-right text-gray-900">${totalRevenue.toFixed(2)}</td>
+                        <td className="py-2 text-sm text-right text-gray-900">KES{totalRevenue.toFixed(2)}</td>
                         <td className="py-2 text-sm text-right text-gray-400">-</td>
                       </tr>
                       <tr className="py-2">
                         <td className="py-2 text-sm text-gray-700">Sales Revenue</td>
                         <td className="py-2 text-sm text-right text-gray-400">-</td>
-                        <td className="py-2 text-sm text-right text-gray-900">${totalRevenue.toFixed(2)}</td>
+                        <td className="py-2 text-sm text-right text-gray-900">KES{totalRevenue.toFixed(2)}</td>
                       </tr>
                       {Object.entries(expensesByCategory).map(([cat, amt]: any) => (
                         <tr key={cat}>
                           <td className="py-2 text-sm text-gray-700">{cat} Expense</td>
-                          <td className="py-2 text-sm text-right text-gray-900">${amt.toFixed(2)}</td>
+                          <td className="py-2 text-sm text-right text-gray-900">KES{amt.toFixed(2)}</td>
                           <td className="py-2 text-sm text-right text-gray-400">-</td>
                         </tr>
                       ))}
@@ -271,8 +271,8 @@ export default function FinancialReportsPage() {
                     <tfoot>
                       <tr className="border-t-2 border-gray-300 font-bold">
                         <td className="py-3 text-sm text-gray-800">TOTALS</td>
-                        <td className="py-3 text-sm text-right text-gray-800">${(totalRevenue + totalExpenses).toFixed(2)}</td>
-                        <td className="py-3 text-sm text-right text-gray-800">${(totalRevenue + totalExpenses).toFixed(2)}</td>
+                        <td className="py-3 text-sm text-right text-gray-800">KES{(totalRevenue + totalExpenses).toFixed(2)}</td>
+                        <td className="py-3 text-sm text-right text-gray-800">KES{(totalRevenue + totalExpenses).toFixed(2)}</td>
                       </tr>
                     </tfoot>
                   </table>
@@ -296,15 +296,15 @@ export default function FinancialReportsPage() {
                     <div className="space-y-2">
                       <div className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-700 text-sm">Cash & Bank</span>
-                        <span className="text-sm font-medium text-gray-800">${netProfit > 0 ? netProfit.toFixed(2) : '0.00'}</span>
+                        <span className="text-sm font-medium text-gray-800">KES{netProfit > 0 ? netProfit.toFixed(2) : '0.00'}</span>
                       </div>
                       <div className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-700 text-sm">Accounts Receivable</span>
-                        <span className="text-sm font-medium text-gray-800">$0.00</span>
+                        <span className="text-sm font-medium text-gray-800">KES0.00</span>
                       </div>
                       <div className="flex justify-between py-2 font-bold border-t-2 border-gray-300 mt-2">
                         <span>Total Assets</span>
-                        <span className="text-blue-700">${netProfit > 0 ? netProfit.toFixed(2) : '0.00'}</span>
+                        <span className="text-blue-700">KES{netProfit > 0 ? netProfit.toFixed(2) : '0.00'}</span>
                       </div>
                     </div>
                   </div>
@@ -313,15 +313,15 @@ export default function FinancialReportsPage() {
                     <div className="space-y-2">
                       <div className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-700 text-sm">Accounts Payable</span>
-                        <span className="text-sm font-medium text-gray-800">$0.00</span>
+                        <span className="text-sm font-medium text-gray-800">KES0.00</span>
                       </div>
                       <div className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-700 text-sm">Retained Earnings</span>
-                        <span className="text-sm font-medium text-gray-800">${netProfit > 0 ? netProfit.toFixed(2) : '0.00'}</span>
+                        <span className="text-sm font-medium text-gray-800">KES{netProfit > 0 ? netProfit.toFixed(2) : '0.00'}</span>
                       </div>
                       <div className="flex justify-between py-2 font-bold border-t-2 border-gray-300 mt-2">
                         <span>Total Liabilities & Equity</span>
-                        <span className="text-blue-700">${netProfit > 0 ? netProfit.toFixed(2) : '0.00'}</span>
+                        <span className="text-blue-700">KES{netProfit > 0 ? netProfit.toFixed(2) : '0.00'}</span>
                       </div>
                     </div>
                   </div>

@@ -96,7 +96,7 @@ export default function SalesPage() {
           </div>
           <div className="bg-white rounded-lg shadow p-6">
             <p className="text-sm text-gray-600">Total Revenue</p>
-            <p className="text-3xl font-bold text-green-600 mt-1">${totalRevenue.toFixed(2)}</p>
+            <p className="text-3xl font-bold text-green-600 mt-1">KES{totalRevenue.toFixed(2)}</p>
           </div>
           <div className="bg-white rounded-lg shadow p-6">
             <p className="text-sm text-gray-600">Avg Sale Value</p>
@@ -212,7 +212,7 @@ export default function SalesPage() {
                       <td className="px-6 py-4 text-sm font-medium text-gray-900">{s.invoice_number}</td>
                       <td className="px-6 py-4 text-sm text-gray-600">{new Date(s.sale_date).toLocaleDateString()}</td>
                       <td className="px-6 py-4 text-sm text-gray-600">{s.customer_name || 'Walk-in'}</td>
-                      <td className="px-6 py-4 text-sm font-semibold text-green-700">${parseFloat(s.total_amount).toFixed(2)}</td>
+                      <td className="px-6 py-4 text-sm font-semibold text-green-700">KES{parseFloat(s.total_amount).toFixed(2)}</td>
                       <td className="px-6 py-4 text-sm">
                         <span className={`px-2 py-1 text-xs rounded font-medium ${s.status === 'paid' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
                           {s.status}

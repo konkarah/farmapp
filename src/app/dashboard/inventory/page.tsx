@@ -216,7 +216,7 @@ export default function InventoryPage() {
           </div>
           <div className="bg-white rounded-lg shadow p-6">
             <p className="text-sm text-gray-600 mb-1">Total Value</p>
-            <p className="text-3xl font-bold text-gray-900">${stats.total_value || 0}</p>
+            <p className="text-3xl font-bold text-gray-900">KES{stats.total_value || 0}</p>
           </div>
           <div className="bg-white rounded-lg shadow p-6">
             <p className="text-sm text-gray-600 mb-1">Low Stock</p>
@@ -438,8 +438,8 @@ export default function InventoryPage() {
                         {item.stock_status === 'low' ? '🔴 Low' : item.stock_status === 'medium' ? '🟡 Medium' : '🟢 Good'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-900">${item.unit_cost || 0}</td>
-                    <td className="px-6 py-4 text-sm text-gray-900">${(item.quantity * (item.unit_cost || 0)).toFixed(2)}</td>
+                    <td className="px-6 py-4 text-sm text-gray-900">KES{item.unit_cost || 0}</td>
+                    <td className="px-6 py-4 text-sm text-gray-900">KES{(item.quantity * (item.unit_cost || 0)).toFixed(2)}</td>
                     <td className="px-6 py-4 text-sm text-gray-600">{item.supplier || '-'}</td>
                     <td className="px-6 py-4 text-sm space-x-2">
                       <button onClick={() => openTransactionForm(item)}

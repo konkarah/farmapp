@@ -75,7 +75,7 @@ export default function ExpensesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-lg shadow p-6">
             <p className="text-sm text-gray-600">Total Expenses</p>
-            <p className="text-3xl font-bold text-red-600 mt-1">${totalExpenses.toFixed(2)}</p>
+            <p className="text-3xl font-bold text-red-600 mt-1">KES{totalExpenses.toFixed(2)}</p>
           </div>
           <div className="bg-white rounded-lg shadow p-6">
             <p className="text-sm text-gray-600">Number of Entries</p>
@@ -176,7 +176,7 @@ export default function ExpensesPage() {
                       <td className="px-6 py-4 text-sm text-gray-700 max-w-xs truncate">{ex.description}</td>
                       <td className="px-6 py-4 text-sm text-gray-600">{ex.vendor || '-'}</td>
                       <td className="px-6 py-4 text-sm text-gray-600 capitalize">{ex.payment_method?.replace('_', ' ') || '-'}</td>
-                      <td className="px-6 py-4 text-sm font-semibold text-red-600">${parseFloat(ex.amount).toFixed(2)}</td>
+                      <td className="px-6 py-4 text-sm font-semibold text-red-600">KES{parseFloat(ex.amount).toFixed(2)}</td>
                       <td className="px-6 py-4 text-sm">
                         <span className={`px-2 py-1 text-xs rounded font-medium ${ex.status === 'approved' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
                           {ex.status || 'pending'}
