@@ -27,7 +27,7 @@ export default function NewEntityTypePage() {
   const fetchFarms = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch('http://32.192.225.100:8070/api/auth/me', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/me`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       const data = await response.json();
@@ -99,7 +99,7 @@ export default function NewEntityTypePage() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch('http://32.192.225.100:8070/api/entity-types', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/entity-types`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

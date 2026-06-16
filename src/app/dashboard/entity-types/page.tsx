@@ -30,7 +30,7 @@ export default function EntityTypesPage() {
   const fetchFarms = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch('http://32.192.225.100:8070/api/auth/me', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/me`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       const data = await response.json();
@@ -49,7 +49,7 @@ export default function EntityTypesPage() {
     try {
       const token = localStorage.getItem('accessToken');
       const response = await fetch(
-        `http://32.192.225.100:8070/api/entity-types?farmId=${selectedFarm}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/entity-types?farmId=${selectedFarm}`,
         {
           headers: { 'Authorization': `Bearer ${token}` },
         }
@@ -80,7 +80,7 @@ export default function EntityTypesPage() {
     try {
       const token = localStorage.getItem('accessToken');
       const response = await fetch(
-        `http://32.192.225.100:8070/api/entity-types/${id}?farmId=${selectedFarm}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/entity-types/${id}?farmId=${selectedFarm}`,
         {
           method: 'DELETE',
           headers: { 

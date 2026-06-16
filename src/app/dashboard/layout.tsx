@@ -29,7 +29,7 @@ export default function DashboardLayout({
 
   const fetchUserProfile = async (token: string) => {
     try {
-      const response = await fetch('http://32.192.225.100:8070/api/auth/me', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/me`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       

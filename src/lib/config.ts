@@ -1,4 +1,4 @@
-export const API_BASE = 'http://32.192.225.100:8070';
+export const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8070';
 
 export const getAuthHeaders = () => ({
   'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,

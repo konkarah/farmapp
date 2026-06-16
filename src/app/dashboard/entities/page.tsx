@@ -43,7 +43,7 @@ export default function EntitiesPage() {
   const fetchFarms = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch('http://32.192.225.100:8070/api/auth/me', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/me`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       const data = await response.json();
@@ -61,7 +61,7 @@ export default function EntitiesPage() {
     try {
       const token = localStorage.getItem('accessToken');
       const response = await fetch(
-        `http://32.192.225.100:8070/api/entity-types?farmId=${selectedFarm}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/entity-types?farmId=${selectedFarm}`,
         { headers: { 'Authorization': `Bearer ${token}` } }
       );
       const data = await response.json();
@@ -77,8 +77,8 @@ export default function EntitiesPage() {
     try {
       const token = localStorage.getItem('accessToken');
       const url = selectedType === 'all'
-        ? `http://32.192.225.100:8070/api/entities?farmId=${selectedFarm}`
-        : `http://32.192.225.100:8070/api/entities?farmId=${selectedFarm}&entityTypeId=${selectedType}`;
+        ? `${process.env.NEXT_PUBLIC_API_URL}/api/entities?farmId=${selectedFarm}`
+        : `${process.env.NEXT_PUBLIC_API_URL}/api/entities?farmId=${selectedFarm}&entityTypeId=${selectedType}`;
 
       const response = await fetch(url, {
         headers: { 'Authorization': `Bearer ${token}` },
@@ -109,7 +109,7 @@ export default function EntitiesPage() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch(`http://32.192.225.100:8070/api/entities/${id}?farmId=${selectedFarm}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/entities/${id}?farmId=${selectedFarm}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
